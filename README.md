@@ -1,1 +1,1 @@
-# DECO3500_WeTried
+# WE Tried Project Description
