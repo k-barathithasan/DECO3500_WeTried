@@ -31,12 +31,12 @@ As a team, we bring together **communication, creativity, coordination, problem-
 ---
 
 ## 📝 Domain Definition  
-This domain explores how casual gaming culture intersects with digital social platforms and the gendered dynamics within gaming communities. Casual gamers, who primarily play for leisure rather than professionally, often engage in parallel digital spaces such as **Reddit, Discord, and Instagram**, where memes, discussions, and shared experiences shape perceptions and behaviors.  
+We are working with Game Developers and Designers in storyline and quest design within games to create opportunities for reducing stereotypes, avoiding sexualization, and promoting inclusive representation through an inventive exploration of the possibilities of social and contextual computing.  
 
 ### Key Domain Characteristics  
-- **🎯 Focus on Casual Gamers:** Individuals engaging in video games primarily for leisure rather than as professionals.  
-- **🚫 Impact of Gender Stereotypes & Sexism:** Investigates how biased perceptions and discriminatory behaviors influence gamers' experiences both in-game and online.  
-- **🗨️ Prevalence of Normalized Sexist Discourse:** Explores how gendered jokes, memes, and community norms reinforce stereotypes in gaming communities.  
+- **🎯 Focus on game developers and designers:** Professionals who create and shape video games, engaging in structured workflows and creative processes rather than playing casually.  
+- **🚫 Impact of gender stereotypes and sexism: ** Examines how biased perceptions and discriminatory norms influence the design choices, character representations, and narrative structures created by developers and designers, shaping the gaming experience at large.  
+- **🗨️ Prevalence of normalized sexist discourse::** Highlights how gendered jokes, memes, and industry norms can subtly reinforce stereotypes within development teams and design practices, influencing how games are created and represented.  
 
 ---
 
