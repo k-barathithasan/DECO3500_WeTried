@@ -114,7 +114,7 @@ The domain examines how casual gaming culture intersects with digital social pla
 ---
 
 ## Interviews
-*(see transcripts: Pramoth Sabari, Arulnithi, Sonu, International Student Player — added below)*  
+!(Images/Transcript.png) 
 
 ---
 
