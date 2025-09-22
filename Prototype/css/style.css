@@ -1,0 +1,82 @@
+:root {
+  /* Primary Color */
+  --color-primary: #7C3AED;       /* Soft Violet - buttons, main highlights */
+
+  /* Secondary Colors */
+  --color-accent-green: #00C48C;  /* Success / Positive feedback */
+  --color-accent-orange: #FF8C42; /* Alerts / Warnings */
+  --color-accent-purple: #9B51E0; /* Optional accent elements */
+
+  /* Neutral Colors */
+  --color-bg-light: #F4F5F7;      /* Background */
+  --color-border: #D1D5DB;        /* Borders, dividers */
+  --color-text-dark: #374151;     /* Main text */
+  --color-navbar: #1A1E2E;        /* Header / Navigation background */
+  --color-card-bg: #FFFFFF;       /* Cards, panels */
+
+  /* Hover & States */
+  --color-primary-hover: #6D28D9; /* Slightly darker violet for hover */
+  --color-accent-green-hover: #00B080;
+  --color-accent-orange-hover: #E07A34;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: var(--color-bg-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--color-text-dark);
+}
+
+.login-container {
+  background: var(--color-card-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 300px;
+  border: 1px solid var(--color-border);
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  outline: none;
+}
+
+.login-container input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 3px var(--color-primary);
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+  background: var(--color-primary-hover);
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 14px;
+}
