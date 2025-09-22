@@ -114,12 +114,12 @@ The domain examines how casual gaming culture intersects with digital social pla
 ---
 
 ## Interviews
-*(see transcripts: Pramoth Sabari, Arulnithi, Sonu, International Student Player — added below)*  
+![Transcript](Images/Transcript.png)
 
 ---
 
 ## Thematic Analysis
-*(grouped by themes: Male-centric narratives, Harmful stereotypes, Industry resistance, Importance of inclusivity, Inclusive strategies, Representation as process & content)*  
+![Thematic](Images/Thematic.png)  
 
 ---
 
