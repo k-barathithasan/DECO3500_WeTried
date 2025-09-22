@@ -20,7 +20,7 @@ To create a **dedicated platform** where:
 The platform has three main views:
 
 1. **Designer/Developer View** – For posting content, managing channels, and inviting reviewers.  
-   ![Designer View](Prototype/Images/designer-view.jpg)
+   ![Designer View](Images/designer-view.jpg)
 
 3. **Reviewer View** – For browsing channels, joining discussions, and submitting feedback.  
    ![Reviewer View](images/reviewer-view.png)
