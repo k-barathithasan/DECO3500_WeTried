@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inclusive — Index</title>
+  <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="Username" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
-    <p id="message"></p>
-  </div>
-  <script src="/js/scripts.js"></script>
+  <header class="topbar">
+    <div class="brand">INCLUSIVE</div>
+    <div class="search-wrap">
+      <input id="globalSearch" type="text" placeholder="Search games, channels, reviewers"/>
+    </div>
+    <a href="/html/Login.html" class="login-btn">Login</a>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-media">
+        <img src="banner-image.png" alt="Logo Banner">
+      </div>
+      <div class="invite-link">
+        <button id="inviteBtn" class="btn-primary">Invite Reviewers</button>
+      </div>
+    </section>
+
+    <section class="tabs">
+      <div class="tabs-row">
+        <button class="tab active" data-tab="featured">Featured</button>
+      </div>
+      <div class="card-grid" id="featuredCards"></div>
+    </section>
+  </main>
+
+  <script src="/js/index.js"></script>
 </body>
 </html>
