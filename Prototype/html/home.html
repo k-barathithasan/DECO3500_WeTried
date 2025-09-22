@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Inclusive</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - GameFrame</title>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-
   <header class="navbar">
-    <div class="logo">GameFrame</div>
+    <div class="logo">INCLUSIVE</div>
     <nav>
-      <a href="#">HOME</a>
+      <a href="/html/home.html">HOME</a>
       <a href="#">REVIEW</a>
       <a href="#">DASHBOARD</a>
     </nav>
     <div class="search-logout">
-      <input type="text" placeholder="Search">
-      <button class="logout">LOGOUT</button>
+      <input id="searchInput" type="text" placeholder="Search">
+      <button class="logout" id="logoutBtn">LOGOUT</button>
     </div>
   </header>
 
   <div class="container">
-
     <aside class="sidebar">
       <a href="#">🏠 Home</a>
       <a href="#">👤 Profile</a>
       <a href="#">✉️ Messages</a>
+      <button id="newPostBtn" class="primary-btn" style="margin-top:12px;">＋ New Character Post</button>
     </aside>
 
     <main class="feed">
       <div class="post-box">
-        <input type="text" placeholder="What's on your mind?">
-        <button>POST</button>
+        <input id="quickPost" type="text" placeholder="What's on your mind?" />
+        <button id="openComposer">POST</button>
       </div>
-
-      <div class="post">
-        <p>Could anyone review this character for stereotypes?</p>
-        <div class="post-actions">
-          <button>👍 Like</button>
-          <button>💬 Comment</button>
-        </div>
-      </div>
-
-      <div class="post">
-        <p>Does this plot contain harmful tropes?</p>
-        <div class="post-actions">
-          <button>👍 Like</button>
-          <button>💬 Comment</button>
-        </div>
-      </div>
-
-      <div class="post">
-        <p>Here are my ideas for a more inclusive narrative</p>
-        <div class="post-actions">
-          <button>👍 Like</button>
-          <button>💬 Comment</button>
-        </div>
-      </div>
+      <div id="feedList"></div>
     </main>
 
     <aside class="trusted">
       <h3>TRUSTED REVIEWERS</h3>
-      <ul>
-        <li>👤 Reviewer 1</li>
-        <li>👤 Reviewer 2</li>
-        <li>👤 Reviewer 3</li>
-      </ul>
+      <ul id="trustedList"></ul>
     </aside>
   </div>
+
+  <div id="composer" class="modal hidden" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="composerTitle">
+      <div class="modal-header">
+        <h3 id="composerTitle">New Character Post</h3>
+        <button class="icon-btn" id="closeComposer" aria-label="Close">✕</button>
+      </div>
+
+      <form id="postForm">
+        <div class="form-row">
+          <label for="charName">Character name</label>
+          <input id="charName" type="text" required />
+        </div>
+
+        <div class="form-row">
+          <label for="charDetails">Character details</label>
+          <textarea id="charDetails" rows="5" placeholder="Describe the character, context, and what you want feedback on…" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="inviteInput">Invite reviewers</label>
+          <input id="inviteInput" type="text" placeholder="Type emails or @usernames, separated by commas"/>
+          <small class="muted">Tip: Click “＋ Invite” next to a trusted reviewer to add them here.</small>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="ghost-btn" id="cancelPost">Cancel</button>
+          <button type="submit" class="primary-btn">Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/home.js"></script>
 </body>
 </html>
