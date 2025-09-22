@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - GameFrame</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <title>Inclusive — Home</title>
+  <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
   <header class="navbar">
     <div class="logo">INCLUSIVE</div>
     <nav>
-      <a href="/html/home.html">HOME</a>
       <a href="#">REVIEW</a>
       <a href="#">DASHBOARD</a>
     </nav>
@@ -20,21 +19,36 @@
     </div>
   </header>
 
-  <div class="container">
-    <aside class="sidebar">
-      <a href="#">🏠 Home</a>
-      <a href="#">👤 Profile</a>
-      <a href="#">✉️ Messages</a>
-      <button id="newPostBtn" class="primary-btn" style="margin-top:12px;">＋ New Character Post</button>
+  <div class="shell">
+    <aside class="guilds">
+      <button class="guild active" data-group="all">A</button>
+      <button class="guild" data-group="rpg">R</button>
+      <button class="guild" data-group="fps">F</button>
+      <button class="guild" data-group="indie">I</button>
+      <div class="guild-spacer"></div>
+      <button class="guild profile" title="Profile">P</button>
     </aside>
 
-    <main class="feed">
-      <div class="post-box">
-        <input id="quickPost" type="text" placeholder="What's on your mind?" />
-        <button id="openComposer">POST</button>
+    <aside class="sidebar"></aside>
+
+
+    <main class="center">
+      <div class="channel-bar">
+        <div class="channel-search">
+          <button id="openComposer" class="primary-btn">＋ New Character Post</button>
+          <input id="channelSearch" type="text" placeholder="Search posts">
+        </div>
+        <div class="pill-row">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="characters">Characters</button>
+          <button class="pill" data-filter="plots">Plots</button>
+          <button class="pill" data-filter="art">Art</button>
+        </div>
       </div>
+
       <div id="feedList"></div>
     </main>
+
 
     <aside class="trusted">
       <h3>TRUSTED REVIEWERS</h3>
@@ -42,6 +56,7 @@
     </aside>
   </div>
 
+  
   <div id="composer" class="modal hidden" aria-hidden="true">
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="composerTitle">
       <div class="modal-header">
@@ -52,18 +67,36 @@
       <form id="postForm">
         <div class="form-row">
           <label for="charName">Character name</label>
-          <input id="charName" type="text" required />
+          <input id="charName" type="text" required/>
         </div>
 
         <div class="form-row">
           <label for="charDetails">Character details</label>
-          <textarea id="charDetails" rows="5" placeholder="Describe the character, context, and what you want feedback on…" required></textarea>
+          <textarea id="charDetails" rows="5" required></textarea>
         </div>
 
         <div class="form-row">
           <label for="inviteInput">Invite reviewers</label>
-          <input id="inviteInput" type="text" placeholder="Type emails or @usernames, separated by commas"/>
-          <small class="muted">Tip: Click “＋ Invite” next to a trusted reviewer to add them here.</small>
+          <input id="inviteInput" type="text" placeholder="@handles or emails, comma separated"/>
+          <small class="muted">Use the Trusted Reviewers panel to add quickly.</small>
+        </div>
+
+        <div class="form-row">
+          <label for="groupSelect">Group</label>
+          <select id="groupSelect">
+            <option value="rpg">RPG</option>
+            <option value="fps">FPS</option>
+            <option value="indie">Indie</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="typeSelect">Type</label>
+          <select id="typeSelect">
+            <option value="characters">Characters</option>
+            <option value="plots">Plots</option>
+            <option value="art">Art</option>
+          </select>
         </div>
 
         <div class="form-actions">

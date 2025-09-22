@@ -11,7 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
 
     // Wait 1 second before redirecting
     setTimeout(() => {
-      window.location.href = "html/home.html";
+      window.location.href = "home.html";
     }, 1000);
   } else {
     message.style.color = "var(--color-accent-orange)";

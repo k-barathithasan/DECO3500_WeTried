@@ -517,3 +517,138 @@ body {
   max-height: 100%;
   object-fit: contain;
 }
+
+.shell {
+  display: grid;
+  grid-template-columns: 72px 200px minmax(520px,1fr) 260px;
+  gap: 20px;
+  padding: 20px;
+}
+
+.guilds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.guild {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  cursor: pointer;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+.guild.active { outline: 3px solid rgba(124,58,237,0.25); }
+.guild.profile { margin-top: auto; }
+.guild-spacer { flex: 1 1 auto; }
+
+.sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.center { min-width: 0; }
+
+.channel-bar {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.channel-search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.channel-search input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.pill-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pill {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.pill.active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: #f3e8ff;
+}
+
+#feedList { display: grid; gap: 12px; }
+
+.post-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.trusted { width: 260px; }
+
+@media (max-width: 1100px) {
+  .shell { grid-template-columns: 72px 180px 1fr; }
+  .trusted { display: none; }
+}
+
+@media (max-width: 800px) {
+  .shell { grid-template-columns: 72px 1fr; }
+  .sidebar { display: none; }
+}
+
+@media (max-width: 600px) {
+  .navbar nav { display: none; }
+  .search-logout input { display: none; }
+  .shell { grid-template-columns: 60px 1fr; gap: 12px; padding: 12px; }
+  .guild { width: 40px; height: 40px; }
+}
+
+.guilds { min-height: calc(100vh - 100px); }
+.guild-spacer { flex: 1 1 auto; }
+.guild.profile { margin-top: auto; }
+
+.channel-bar {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+.channel-search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.channel-search input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.sidebar a,
+.sidebar .primary-btn { display: none; }
