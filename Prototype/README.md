@@ -23,10 +23,10 @@ The platform has three main views:
    ![Designer View](Images/designer-view.jpg)
 
 3. **Reviewer View** – For browsing channels, joining discussions, and submitting feedback.  
-   ![Reviewer View](images/reviewer-view.png)
+   ![Reviewer View](Images/reviewer-view.jpg)
 
 4. **Landing Hub** – The first page after signing in, enabling users to join as reviewers or explore content passively.  
-   ![Landing Hub](images/landing-hub.png)
+   ![Landing Hub](Images/landing-hub.jpg)
 
 ---
 
