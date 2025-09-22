@@ -55,15 +55,4 @@ The platform has three main views:
 
 ---
 
-## 📂 Platform Structure
 
-```plaintext
-Platform/
-├── images/
-│   ├── banner.png
-│   ├── designer-view.png
-│   ├── reviewer-view.png
-│   └── landing-hub.png
-├── README.md
-└── docs/
-    └── PlatformDetails.pdf
