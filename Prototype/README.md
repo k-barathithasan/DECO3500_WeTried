@@ -20,12 +20,12 @@ To create a **dedicated platform** where:
 The platform has three main views:
 
 1. **Designer/Developer View** – For posting content, managing channels, and inviting reviewers.  
-   ![Designer View](images/designer-view.png)
+   ![Designer View](Prototype/Images/designer-view.jpg)
 
-2. **Reviewer View** – For browsing channels, joining discussions, and submitting feedback.  
+3. **Reviewer View** – For browsing channels, joining discussions, and submitting feedback.  
    ![Reviewer View](images/reviewer-view.png)
 
-3. **Landing Hub** – The first page after signing in, enabling users to join as reviewers or explore content passively.  
+4. **Landing Hub** – The first page after signing in, enabling users to join as reviewers or explore content passively.  
    ![Landing Hub](images/landing-hub.png)
 
 ---
