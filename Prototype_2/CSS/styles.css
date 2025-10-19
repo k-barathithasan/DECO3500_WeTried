@@ -69,3 +69,23 @@
 .dark .modal-card{background:#151822;border-color:#232634}
 .dark #boardCanvas{border-color:#232634;background:#0b0f16}
 .dark .btn{background:#151822;border-color:#232634;color:#e6e8ef}
+.hidden{display:none}
+.form{padding:14px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field label{display:block;font-size:12px;color:#6b7280;margin-bottom:6px}
+.field input,.field textarea{width:100%;border:1px solid var(--border);border-radius:10px;padding:10px;background:#fff;font:inherit}
+.field.full{grid-column:1/-1}
+.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}
+.comment-form{display:flex;gap:8px;margin-top:10px}
+.comment-form input{flex:1;border:1px solid var(--border);border-radius:10px;padding:10px}
+.comment-form button{border:1px solid var(--border);background:#fff;border-radius:10px;padding:10px 12px;font-weight:600;cursor:pointer}
+.dark .field input,.dark .field textarea,.dark .comment-form input,.dark .comment-form button{background:#151822;border-color:#232634;color:#e6e8ef}
+.draw-toolbar{display:flex;gap:8px;align-items:center;margin:0 0 10px}
+.draw-toolbar [data-active="1"]{outline:2px solid var(--brand)}
+#boardCanvas{position:relative;overflow:auto;border:1px solid var(--border);border-radius:12px;background:#0b0d14}
+#boardImage{display:block;max-width:100%;height:auto}
+#drawCanvas{position:absolute;left:0;top:0;pointer-events:auto}
+#pinLayer{position:absolute;inset:0;pointer-events:auto}
+.dark .draw-toolbar [data-active="1"]{outline:2px solid #8b7dff}
+
+
