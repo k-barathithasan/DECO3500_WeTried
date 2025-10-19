@@ -93,7 +93,7 @@ let posts=[{
   author:"Yashida Yagami",
   role:"Head of Design",
   avatar:"https://images.unsplash.com/photo-1609344143650-30a2a1b2f3b0?q=80&w=256&auto=format&fit=crop",
-  hero:"https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=1600&auto=format&fit=crop",
+  hero:"/Assets/Character2.png",
   title:"Feedback on Female Character Design – Need Input on Representation & Stereotypes",
   text:"Hi everyone, I’m working on a new female character for my game and would love your feedback. I want to know if this design contains any stereotypical traits, over-sexualization, or costume issues that might limit how inclusive and authentic she feels.",
   comments:[

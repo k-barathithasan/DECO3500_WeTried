@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FairView • Community Feedback</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/CSS/styles.css">
+</head>
+<body>
+<div class="sidebar-overlay" id="overlay"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo">FV</div>
+      <h1>FairView</h1>
+    </div>
+    <div class="filter">
+      <h3>Feed</h3>
+      <button class="menu-btn active">All Posts</button>
+    </div>
+    <div class="filter">
+      <h3>Channels</h3>
+      <div class="game-list">
+        <div class="game-item"><div class="game-avatar"></div><span>Genshin Impact</span><span class="badge-dot">1</span></div>
+        <div class="game-item"><div class="game-avatar"></div><span>Tales of Arise</span></div>
+        <div class="game-item"><div class="game-avatar"></div><span>Scarlet Nexus</span></div>
+      </div>
+    </div>
+    <div class="sidebar-spacer"></div>
+    <button class="create-channel">+ Create Channel</button>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="mobile-topbar">
+        <button class="icon-btn" id="openSidebar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7" stroke-width="2"/><path d="M21 21l-3.4-3.4" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" placeholder="Search for anything">
+      </div>
+      <button class="icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 1 0-12 0v3.2c0 .5-.2 1-.6 1.4L4 17h5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 17a3 3 0 0 0 6 0" stroke-width="2"/></svg></button>
+      <button class="icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4" stroke-width="2"/><path d="M6 20a6 6 0 0 1 12 0" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="primary-btn" id="addPost">+ Add New Post</button>
+    </div>
+
+    <div id="feed"></div>
+  </main>
+
+  <aside class="rail">
+    <section class="panel">
+      <h3>Top Reviewers</h3>
+      <div class="user-item"><div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&auto=format&fit=crop"></div><div><div>Yashida Yagami</div><div class="sub">Top Reviewer</div></div></div>
+      <div class="user-item"><div class="avatar"><img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=256&auto=format&fit=crop"></div><div><div>Sakura Iziyani</div><div class="sub">Recommended by Night Shift Studios</div></div></div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h3>Communities</h3><div class="spacer"></div><button class="link-btn">Create New</button></div>
+      <div class="community"><div class="facepile"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=128&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=128&auto=format&fit=crop"></div><div>South Asian Circle</div><span class="count">2</span><div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </section>
+  </aside>
+</div>
+<div id="boardModal" class="modal">
+  <div class="modal-backdrop" id="boardBackdrop"></div>
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-title">Annotation Board</div>
+      <div class="modal-actions">
+        <button class="btn" id="clearPins">Clear</button>
+        <button class="btn" id="closeBoard">Close</button>
+      </div>
+    </div>
+    <div class="board-wrap">
+  <div class="draw-toolbar">
+    <button class="btn" id="toolPins">Pins</button>
+    <button class="btn" id="toolPen" data-active="1">Pen</button>
+    <button class="btn" id="toolErase">Eraser</button>
+    <input type="color" id="strokeColor" value="#ff4757">
+    <input type="range" id="strokeSize" min="1" max="24" value="4">
+    <button class="btn" id="clearDraw">Clear Drawing</button>
+  </div>
+  <div id="boardCanvas">
+    <img id="boardImage" src="" alt="">
+    <canvas id="drawCanvas"></canvas>
+    <div id="pinLayer"></div>
+  </div>
+  <div class="hint">Click to add pins in Pins mode. Draw directly on the image in Pen/Eraser mode. Drag pins to reposition.</div>
+</div>
+  </div>
+</div>
+<div id="postModal" class="modal">
+  <div class="modal-backdrop" id="postBackdrop"></div>
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-title">New Post</div>
+      <div class="modal-actions">
+        <button class="btn" id="closePostModal">Close</button>
+      </div>
+    </div>
+    <form id="postForm" class="form">
+      <div class="form-grid">
+        <div class="field"><label>Author</label><input id="pfAuthor" required></div>
+        <div class="field"><label>Role</label><input id="pfRole" required></div>
+        <div class="field"><label>Avatar URL</label><input id="pfAvatar" required></div>
+        <div class="field"><label>Hero Image URL</label><input id="pfHero" required></div>
+        <div class="field full"><label>Title</label><input id="pfTitle" required></div>
+        <div class="field full"><label>Text</label><textarea id="pfText" rows="4" required></textarea></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="submit" id="createPostBtn">Create Post</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="/Java/scripts.js"></script>
+</body>
+</html>
