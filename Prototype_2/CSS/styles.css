@@ -502,3 +502,15 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
 }
 
 
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.brand-img {
+  width: 160px; /* adjust if needed */
+  height: auto;
+  display: block;
+}

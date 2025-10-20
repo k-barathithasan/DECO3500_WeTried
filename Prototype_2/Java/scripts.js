@@ -152,7 +152,7 @@ const feed=document.getElementById('feed')
 let posts=[{
   id:crypto.randomUUID(),
   author:"Yashida Yagami",
-  role:"Head of Design",
+  role:"   Head of Design",
   avatar:"/Assets/Profile5.png",
   hero:"/Assets/Character2.png",
   title:"Feedback on Female Character Design – Need Input on Representation & Stereotypes",
@@ -209,6 +209,66 @@ const renderPost=p=>h(`
 
 const renderAll=()=>{feed.innerHTML='';posts.forEach(p=>feed.appendChild(renderPost(p)))}
 renderAll()
+
+/* ---------- New Post modal (fix) ---------- */
+const postModal       = document.getElementById('postModal');
+const postBackdrop    = document.getElementById('postBackdrop');
+const closePostModal  = document.getElementById('closePostModal');
+const postForm        = document.getElementById('postForm');
+const addPostBtn      = document.getElementById('addPost');
+
+const openPostModal = () => postModal?.classList.add('show');
+const closePost     = () => postModal?.classList.remove('show');
+
+// Open modal
+addPostBtn?.addEventListener('click', openPostModal);
+
+// Close modal (X / backdrop / Esc)
+postBackdrop?.addEventListener('click', closePost);
+closePostModal?.addEventListener('click', closePost);
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePost();
+});
+
+// Create post
+postForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const heroFile = document.getElementById('pfHeroFile').files[0];
+  let heroBase64 = "";
+
+  if (heroFile) {
+    heroBase64 = await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (ev) => resolve(ev.target.result);
+      reader.readAsDataURL(heroFile);
+    });
+  }
+
+  const data = {
+    id: crypto.randomUUID(),
+    author: document.getElementById('pfAuthor').value.trim(),
+    role:   document.getElementById('pfRole').value.trim(),
+    avatar: document.getElementById('pfAvatar').value.trim() || "https://via.placeholder.com/64",
+    hero:   heroBase64 || "/Assets/default-image.png",
+    title:  document.getElementById('pfTitle').value.trim(),
+    text:   document.getElementById('pfText').value.trim(),
+    comments: []
+  };
+
+  if (!data.author || !data.role || !data.title || !data.text) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  posts.unshift(data);
+  renderAll();
+  postForm.reset();
+  document.getElementById('pfHeroPreview').style.display = "none";
+  closePost();
+});
+
+
 
 
 feed.addEventListener('click',e=>{

@@ -12,9 +12,9 @@
 <div class="app">
   <aside class="sidebar" id="sidebar">
     <div class="brand">
-      <div class="brand-logo">FV</div>
-      <h1>FairFrame</h1>
-    </div>
+  <img src="/Assets/Artboard 1.png" alt="FairFrame Logo" class="brand-img">
+</div>
+
     <div class="filter">
       <h3>Feed</h3>
       <button class="menu-btn active">All Posts</button>
@@ -122,18 +122,25 @@
       </div>
     </div>
     <form id="postForm" class="form">
-      <div class="form-grid">
-        <div class="field"><label>Author</label><input id="pfAuthor" required></div>
-        <div class="field"><label>Role</label><input id="pfRole" required></div>
-        <div class="field"><label>Avatar URL</label><input id="pfAvatar" required></div>
-        <div class="field"><label>Hero Image URL</label><input id="pfHero" required></div>
-        <div class="field full"><label>Title</label><input id="pfTitle" required></div>
-        <div class="field full"><label>Text</label><textarea id="pfText" rows="4" required></textarea></div>
-      </div>
-      <div class="form-actions">
-        <button class="btn" type="submit" id="createPostBtn">Create Post</button>
-      </div>
-    </form>
+  <div class="form-grid">
+    <div class="field"><label>Author</label><input id="pfAuthor" required></div>
+    <div class="field"><label>Role</label><input id="pfRole" required></div>
+    <div class="field"><label>Avatar URL</label><input id="pfAvatar"></div>
+
+    <div class="field full">
+      <label>Upload Hero Image</label>
+      <input type="file" id="pfHeroFile" accept="image/*">
+      <img id="pfHeroPreview" style="display:none;margin-top:8px;max-width:100%;border-radius:8px;">
+    </div>
+
+    <div class="field full"><label>Title</label><input id="pfTitle" required></div>
+    <div class="field full"><label>Text</label><textarea id="pfText" required></textarea></div>
+  </div>
+  <div class="form-actions">
+    <button type="submit" class="primary-btn">Post</button>
+  </div>
+</form>
+
   </div>
 </div>
 <div id="badgeModal" class="modal" data-reviewer-id="">
