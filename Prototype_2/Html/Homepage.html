@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FairView • Community Feedback</title>
+<title>FairFrame• Community Feedback</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/CSS/styles.css">
 </head>
@@ -13,7 +13,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="brand">
       <div class="brand-logo">FV</div>
-      <h1>FairView</h1>
+      <h1>FairFrame</h1>
     </div>
     <div class="filter">
       <h3>Feed</h3>
@@ -30,7 +30,6 @@
     <div class="sidebar-spacer"></div>
     <button class="create-channel">+ Create Channel</button>
   </aside>
-
   <main class="main">
     <div class="topbar">
       <div class="mobile-topbar">
@@ -46,15 +45,25 @@
       <button class="icon-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="8" r="4" stroke-width="2"/><path d="M6 20a6 6 0 0 1 12 0" stroke-width="2" stroke-linecap="round"/></svg></button>
       <button class="primary-btn" id="addPost">+ Add New Post</button>
     </div>
-
     <div id="feed"></div>
   </main>
-
   <aside class="rail">
     <section class="panel">
       <h3>Top Reviewers</h3>
-      <div class="user-item"><div class="avatar"><img src="/Assets/Profile.png"></div><div><div>Yashida Yagami</div><div class="sub">Top Reviewer</div></div></div>
-      <div class="user-item"><div class="avatar"><img src="/Assets/Profile2.png"></div><div><div>Sakura Iziyani</div><div class="sub">Recommended by Night Shift Studios</div></div></div>
+      <div id="reviewersList"></div>
+      <div class="panel-actions">
+        <button class="link-btn" id="viewAllBadges">View all badges</button>
+      </div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h3>Badge Legend</h3><div class="spacer"></div><button class="link-btn" id="manageBadgesBtn">Manage</button></div>
+      <ul class="badge-legend" id="badgeLegend">
+        <li data-badge="insightful"><span class="badge badge--insightful">Insightful</span> Clear, deep analysis</li>
+        <li data-badge="inclusive"><span class="badge badge--inclusive">Inclusive</span> Improves representation</li>
+        <li data-badge="constructive"><span class="badge badge--constructive">Constructive</span> Actionable feedback</li>
+        <li data-badge="fast"><span class="badge badge--fast">Fast Responder</span> Timely support</li>
+        <li data-badge="mentor"><span class="badge badge--mentor">Kind Mentor</span> Encourages learning</li>
+      </ul>
     </section>
     <section class="panel">
       <div class="panel-head"><h3>Communities</h3><div class="spacer"></div><button class="link-btn">Create New</button></div>
@@ -73,21 +82,21 @@
       </div>
     </div>
     <div class="board-wrap">
-  <div class="draw-toolbar">
-    <button class="btn" id="toolPins">Pins</button>
-    <button class="btn" id="toolPen" data-active="1">Pen</button>
-    <button class="btn" id="toolErase">Eraser</button>
-    <input type="color" id="strokeColor" value="#ff4757">
-    <input type="range" id="strokeSize" min="1" max="24" value="4">
-    <button class="btn" id="clearDraw">Clear Drawing</button>
-  </div>
-  <div id="boardCanvas">
-    <img id="boardImage" src="" alt="">
-    <canvas id="drawCanvas"></canvas>
-    <div id="pinLayer"></div>
-  </div>
-  <div class="hint">Click to add pins in Pins mode. Draw directly on the image in Pen/Eraser mode. Drag pins to reposition.</div>
-</div>
+      <div class="draw-toolbar">
+        <button class="btn" id="toolPins">Pins</button>
+        <button class="btn" id="toolPen" data-active="1">Pen</button>
+        <button class="btn" id="toolErase">Eraser</button>
+        <input type="color" id="strokeColor" value="#ff4757">
+        <input type="range" id="strokeSize" min="1" max="24" value="4">
+        <button class="btn" id="clearDraw">Clear Drawing</button>
+      </div>
+      <div id="boardCanvas">
+        <img id="boardImage" src="">
+        <canvas id="drawCanvas"></canvas>
+        <div id="pinLayer"></div>
+      </div>
+      <div class="hint">Click to add pins in Pins mode. Draw directly on the image in Pen/Eraser mode. Drag pins to reposition.</div>
+    </div>
   </div>
 </div>
 <div id="postModal" class="modal">
@@ -114,6 +123,72 @@
     </form>
   </div>
 </div>
+<div id="badgeModal" class="modal" data-reviewer-id="">
+  <div class="modal-backdrop" id="badgeBackdrop"></div>
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-title">Give a Badge</div>
+      <div class="modal-actions">
+        <button class="btn" id="closeBadgeModal">Close</button>
+      </div>
+    </div>
+    <form id="badgeForm" class="form">
+      <div class="form-grid">
+        <div class="field full"><label>Recipient</label><input id="badgeRecipient" readonly></div>
+        <div class="field full">
+          <label>Badge Type</label>
+          <div class="badge-picker" id="badgePicker">
+            <label class="badge-option"><input type="radio" name="badgeType" value="insightful" required><span class="badge badge--insightful">Insightful</span></label>
+            <label class="badge-option"><input type="radio" name="badgeType" value="inclusive"><span class="badge badge--inclusive">Inclusive</span></label>
+            <label class="badge-option"><input type="radio" name="badgeType" value="constructive"><span class="badge badge--constructive">Constructive</span></label>
+            <label class="badge-option"><input type="radio" name="badgeType" value="fast"><span class="badge badge--fast">Fast Responder</span></label>
+            <label class="badge-option"><input type="radio" name="badgeType" value="mentor"><span class="badge badge--mentor">Kind Mentor</span></label>
+          </div>
+        </div>
+        <div class="field full"><label>Note (optional)</label><textarea id="badgeNote" rows="3"></textarea></div>
+        <input type="hidden" id="badgeContext" value="">
+      </div>
+      <div class="form-actions"><button class="btn" type="submit" id="giveBadgeBtn">Give Badge</button></div>
+    </form>
+  </div>
+</div>
+<div id="badgeDetailsModal" class="modal">
+  <div class="modal-backdrop" id="badgeDetailsBackdrop"></div>
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-title">Badges</div>
+      <div class="modal-actions">
+        <button class="btn" id="closeBadgeDetails">Close</button>
+      </div>
+    </div>
+    <div class="badge-details-body">
+      <div class="badge-summary" id="badgeSummary"></div>
+      <div class="badge-history" id="badgeHistory"></div>
+    </div>
+  </div>
+</div>
+<template id="badgeChipTemplate"><span class="badge" data-badge=""></span></template>
+<template id="leaderboardRowTemplate">
+  <div class="reviewer-row" data-reviewer-id="">
+    <div class="reviewer-meta">
+      <img class="avatar" src="" alt="">
+      <div class="info">
+        <div class="name"></div>
+        <div class="role"></div>
+      </div>
+    </div>
+    <div class="row-actions">
+      <button class="btn btn--give-badge" data-action="open-badge">Give Badge</button>
+      <button class="btn btn--view-badges" data-action="view-badges">View Badges</button>
+      <button class="btn btn--profile" data-action="profile">View</button>
+    </div>
+  </div>
+</template>
+
+
+<template id="badgeHistoryItemTemplate">
+  <div class="badge-history-item"><div class="left"><span class="badge"></span><div class="text"><div class="who"></div><div class="why"></div></div></div><div class="right"><time class="when"></time><a class="contextLink" href="#" target="_blank">View context</a></div></div>
+</template>
 <script src="/Java/scripts.js"></script>
 </body>
 </html>

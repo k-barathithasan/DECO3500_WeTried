@@ -1,5 +1,6 @@
-:root{--bg:#F7F1E8;--card:#fff;--text:#1f2430;--muted:#606776;--border:#e6e6ea;--brand:#6E56EF;--brand-2:#2C2F3A;--ring:rgba(110,86,239,.35);}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text)}
+:root{--bg:#F7F1E8;--card:#fff;--text:#1f2430;--muted:#606776;--border:#e6e6ea;--brand:#6E56EF;--brand-2:#2C2F3A;--ring:rgba(110,86,239,.35);--insight:#EDEBFE;--inclusive:#E7FFF4;--construct:#FFF5E6;--fast:#EAF6FF;--mentor:#FFEAF2}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text)}
 .app{display:grid;grid-template-columns:260px 1fr 340px;gap:28px;padding:20px;max-width:1400px;margin:auto}
 .sidebar{background:var(--brand-2);color:#fff;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:12px}
@@ -13,12 +14,14 @@
 .game-avatar{width:28px;height:28px;border-radius:50%;background:#2b2f3a}
 .badge-dot{margin-left:auto;background:#ffd166;border-radius:20px;padding:2px 7px;font-weight:700;font-size:11px;color:#000}
 .create-channel{background:#111319;color:#fff;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;cursor:pointer}
+
 .main{min-width:0}
 .topbar{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px;display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .search{flex:1;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:8px 12px}
 .search input{border:0;outline:0;width:100%;font-size:14px}
 .icon-btn{width:38px;height:38px;border:1px solid var(--border);border-radius:12px;background:#fff;display:grid;place-items:center;cursor:pointer}
 .primary-btn{background:var(--brand);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px var(--ring)}
+
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:18px}
 .post-head{display:flex;align-items:center;gap:12px;padding:14px}
 .avatar{width:42px;height:42px;border-radius:50%;overflow:hidden}
@@ -31,10 +34,25 @@
 .actions{display:flex;gap:10px;margin-top:12px}
 .chip{padding:8px 12px;border-radius:999px;background:#f5f3ff;border:1px solid var(--border);cursor:pointer}
 .chip.alt{background:#e8fff7}
+
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;border:1px solid var(--border)}
+.badge::before{content:"";width:8px;height:8px;border-radius:999px;display:inline-block}
+.badge--insightful{background:var(--insight)}
+.badge--insightful::before{background:#7c6df6}
+.badge--inclusive{background:var(--inclusive)}
+.badge--inclusive::before{background:#00b37e}
+.badge--constructive{background:var(--construct)}
+.badge--constructive::before{background:#ff8a33}
+.badge--fast{background:var(--fast)}
+.badge--fast::before{background:#2aa3ff}
+.badge--mentor{background:var(--mentor)}
+.badge--mentor::before{background:#ff5a8a}
+.badge-text{font-size:12px;color:#888}
+
 .comments{margin-top:14px;display:flex;flex-direction:column;gap:12px}
 .comment{display:flex;gap:10px}
 .bubble{background:#fafafa;border:1px solid var(--border);padding:12px;border-radius:12px;flex:1}
-.badge-text{font-size:12px;color:#888}
+
 .rail{display:flex;flex-direction:column;gap:16px}
 .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px}
 .user-item{display:flex;align-items:center;gap:10px;padding:8px;border-radius:12px}
@@ -47,8 +65,58 @@
 .facepile img{width:24px;height:24px;border-radius:50%;border:2px solid #fff;margin-left:-6px}
 .count{margin-left:auto;background:#EDEBFE;border:1px solid #e1dfff;padding:3px 8px;border-radius:999px;font-weight:700;font-size:12px}
 .arrow{margin-left:8px;width:28px;height:28px;border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;background:#fff}
-@media(max-width:1200px){.app{grid-template-columns:240px 1fr}.rail{display:none}}
-@media(max-width:900px){.app{grid-template-columns:1fr;gap:16px;padding:12px}.sidebar{position:fixed;inset:0 auto 0 0;width:82%;max-width:300px;transform:translateX(-100%);transition:.3s;z-index:60}.sidebar.open{transform:translateX(0)}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:50}.sidebar-overlay.show{display:block}}
+
+#reviewersList{display:flex;flex-direction:column;gap:10px}
+.reviewer-row{display:flex;align-items:center;gap:10px;border:1px solid var(--border);background:#fff;border-radius:12px;padding:10px}
+.reviewer-row .reviewer-meta{display:flex;align-items:center;gap:10px;min-width:0}
+.reviewer-row .avatar{width:36px;height:36px;border-radius:50%;background:#f2f2f2;overflow:hidden}
+.reviewer-row .info{display:flex;flex-direction:column}
+.reviewer-row .name{font-weight:700;font-size:14px}
+.reviewer-row .role{font-size:12px;color:var(--muted)}
+.reviewer-row .reviewer-sum{display:flex;gap:6px;margin-left:auto}
+.badge-tally{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 8px;border-radius:999px;border:1px solid var(--border);font-weight:700;font-size:12px;background:#fafafa}
+.badge-tally[data-type="insightful"]{background:var(--insight)}
+.badge-tally[data-type="inclusive"]{background:var(--inclusive)}
+.badge-tally[data-type="constructive"]{background:var(--construct)}
+.badge-tally[data-type="fast"]{background:var(--fast)}
+.badge-tally[data-type="mentor"]{background:var(--mentor)}
+.row-actions{display:flex;gap:8px}
+.btn--give-badge{background:var(--brand);color:#fff;border:0}
+.btn--give-badge:focus{outline:2px solid var(--ring)}
+
+.badge-legend{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.badge-legend li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+
+.badge-details-body{display:grid;grid-template-columns:1fr;gap:12px;padding:14px}
+#badgeSummary{display:flex;flex-wrap:wrap;gap:8px}
+#badgeHistory{display:flex;flex-direction:column;gap:10px;max-height:48vh;overflow:auto}
+.badge-history-item{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--border);border-radius:12px;padding:10px;background:#fff}
+.badge-history-item .left{display:flex;align-items:center;gap:10px}
+.badge-history-item .text{display:flex;flex-direction:column}
+.badge-history-item .who{font-weight:700;font-size:14px}
+.badge-history-item .why{font-size:12px;color:var(--muted)}
+.badge-history-item .right{display:flex;align-items:center;gap:10px}
+.badge-history-item .when{font-size:12px;color:var(--muted)}
+.badge-history-item .contextLink{font-size:12px}
+
+.badge-picker{display:flex;flex-wrap:wrap;gap:8px}
+.badge-option{display:inline-flex;align-items:center;gap:8px;padding:6px;border:1px dashed var(--border);border-radius:10px;cursor:pointer}
+.badge-option input{appearance:none;width:14px;height:14px;border:2px solid var(--border);border-radius:50%}
+.badge-option input:checked{border-color:var(--brand);box-shadow:0 0 0 3px var(--ring)}
+.badge-option .badge{pointer-events:none}
+
+@media(max-width:1200px){
+  .app{grid-template-columns:240px 1fr}
+  .rail{display:none}
+}
+@media(max-width:900px){
+  .app{grid-template-columns:1fr;gap:16px;padding:12px}
+  .sidebar{position:fixed;inset:0 auto 0 0;width:82%;max-width:300px;transform:translateX(-100%);transition:.3s;z-index:60}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:50}
+  .sidebar-overlay.show{display:block}
+}
+
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:100}
 .modal.show{display:flex}
 .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);backdrop-filter:saturate(120%) blur(2px)}
@@ -70,6 +138,7 @@
 .dark #boardCanvas{border-color:#232634;background:#0b0f16}
 .dark .btn{background:#151822;border-color:#232634;color:#e6e8ef}
 .hidden{display:none}
+
 .form{padding:14px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .field label{display:block;font-size:12px;color:#6b7280;margin-bottom:6px}
@@ -80,12 +149,236 @@
 .comment-form input{flex:1;border:1px solid var(--border);border-radius:10px;padding:10px}
 .comment-form button{border:1px solid var(--border);background:#fff;border-radius:10px;padding:10px 12px;font-weight:600;cursor:pointer}
 .dark .field input,.dark .field textarea,.dark .comment-form input,.dark .comment-form button{background:#151822;border-color:#232634;color:#e6e8ef}
+
 .draw-toolbar{display:flex;gap:8px;align-items:center;margin:0 0 10px}
 .draw-toolbar [data-active="1"]{outline:2px solid var(--brand)}
-#boardCanvas{position:relative;overflow:auto;border:1px solid var(--border);border-radius:12px;background:#0b0d14}
-#boardImage{display:block;max-width:100%;height:auto}
 #drawCanvas{position:absolute;left:0;top:0;pointer-events:auto}
-#pinLayer{position:absolute;inset:0;pointer-events:auto}
 .dark .draw-toolbar [data-active="1"]{outline:2px solid #8b7dff}
 
+#reviewersList{display:flex;flex-direction:column;gap:12px}
+.reviewer-row{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:12px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:14px;
+  padding:10px 12px;
+}
+.reviewer-row .reviewer-meta{display:flex;align-items:center;gap:10px;min-width:0}
+.reviewer-row .avatar{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.reviewer-row .info{display:flex;flex-direction:column;min-width:0}
+.reviewer-row .name{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reviewer-row .role{font-size:12px;color:var(--muted)}
+.reviewer-row .reviewer-sum{display:flex;gap:6px;margin-left:auto}
+.badge-tally{
+  min-width:26px;height:26px;padding:0 6px;
+  display:inline-flex;align-items:center;justify-content:center;
+  border-radius:999px;border:1px solid var(--border);
+  font-weight:700;font-size:12px;line-height:1;background:#fafafa
+}
+.row-actions{display:flex;gap:8px;margin-left:8px}
+.row-actions .btn{padding:6px 10px;border-radius:10px}
+.row-actions .link-btn{padding:6px 10px}
 
+.comment .bubble .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.badge-inline-btn{
+  font-size:12px;font-weight:700;
+  border:1px solid var(--border);background:#fff;
+  padding:4px 8px;border-radius:999px;cursor:pointer
+}
+.badge-inline-btn:hover{box-shadow:0 0 0 3px var(--ring)}
+
+.badge{gap:6px;padding:5px 9px;font-size:12px}
+
+.reviewer-row{
+  display:grid;
+  grid-template-columns:auto 1fr auto; 
+  align-items:center;
+}
+
+.reviewer-row .reviewer-meta{min-width:0}
+.reviewer-row img.avatar{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block}
+.reviewer-row .name{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reviewer-row .role{font-size:12px;color:var(--muted);max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+
+.reviewer-row .reviewer-sum{
+  margin-left:0;              
+  justify-self:end;           
+  display:flex;
+  gap:6px;
+  flex-wrap:nowrap;
+}
+.reviewer-row .reviewer-sum .badge-tally{flex:0 0 auto}
+
+
+.reviewer-row .row-actions{
+  justify-self:end;
+  display:flex;
+  gap:8px;
+  min-width:max-content;     
+}
+.reviewer-row .row-actions .btn{padding:6px 10px;border-radius:10px}
+.reviewer-row .row-actions .btn--give-badge{
+  background:var(--brand) !important;
+  color:#fff !important;
+  border:0;
+}
+
+
+.badge-tally{
+  min-width:24px;
+  height:24px;
+  padding:0 6px;
+  font-size:12px;
+  line-height:1;
+}
+/* --- Top Reviewers: readable, flexible row layout --- */
+.reviewer-row{
+  display:flex !important;                 /* switch from grid → flex */
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:14px;
+}
+
+.reviewer-row .reviewer-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:220px;                         /* guarantees room for name */
+  flex:1 1 auto;                           /* meta grows */
+}
+.reviewer-row img.avatar{
+  width:36px;height:36px;border-radius:50%;object-fit:cover;display:block;
+}
+.reviewer-row .info{min-width:0}
+.reviewer-row .name{
+  font-weight:700;font-size:14px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.reviewer-row .role{
+  font-size:12px;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Tallies stay compact and never push the name off */
+.reviewer-row .reviewer-sum{
+  display:flex;gap:6px;flex:0 0 auto;margin-left:12px;
+}
+.badge-tally{min-width:24px;height:24px;padding:0 6px;font-size:12px;line-height:1}
+
+/* Actions pinned to the far right, no squish */
+.reviewer-row .row-actions{
+  display:flex;gap:8px;flex:0 0 auto;margin-left:12px;
+  min-width:max-content;
+}
+.reviewer-row .row-actions .btn--give-badge{
+  background:var(--brand)!important;color:#fff!important;border:0;
+  padding:6px 10px;border-radius:10px;
+}
+.reviewer-row .row-actions .link-btn{padding:6px 10px;border-radius:10px}
+/* --- Final Top Reviewers layout with stacked buttons --- */
+.reviewer-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:10px 14px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+}
+
+.reviewer-row .reviewer-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1;
+  min-width:0;
+}
+.reviewer-row img.avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+}
+.reviewer-row .info{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+.reviewer-row .name{
+  font-weight:700;
+  font-size:15px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.reviewer-row .role{
+  font-size:12px;
+  color:var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.reviewer-row .reviewer-sum{
+  display:flex;
+  gap:6px;
+  flex:0 0 auto;
+  margin-left:12px;
+}
+.badge-tally{
+  min-width:26px;
+  height:26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  border:1px solid var(--border);
+  font-weight:700;
+  font-size:12px;
+  background:#fafafa;
+}
+
+/* stacked Give + View buttons */
+.reviewer-row .row-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:6px;
+  flex:0 0 auto;
+}
+.reviewer-row .btn--give-badge{
+  background:var(--brand);
+  color:#fff;
+  border:0;
+  padding:6px 12px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+}
+.reviewer-row .btn--view-badges{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:5px 10px;
+  font-size:12px;
+  color:var(--muted);
+  cursor:pointer;
+}
+.reviewer-row .btn--view-badges:hover{
+  color:var(--brand);
+  border-color:var(--brand);
+}
+
+@media(max-width:900px){
+  .reviewer-row{flex-direction:column;align-items:flex-start;}
+  .reviewer-row .row-actions{flex-direction:row;width:100%;justify-content:space-between;}
+}
