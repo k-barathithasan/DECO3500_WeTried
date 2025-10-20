@@ -5,7 +5,7 @@ const closeSidebar=()=>{sidebar.classList.remove('open');overlay.classList.remov
 const openSidebarFn=()=>{sidebar.classList.add('open');overlay.classList.add('show')}
 if(openBtn){openBtn.addEventListener('click',openSidebarFn);overlay.addEventListener('click',closeSidebar);window.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar()})}
 
-/* ---------- BOARD (Annotation) ---------- */
+
 const boardModal=document.getElementById('boardModal')
 const boardBackdrop=document.getElementById('boardBackdrop')
 const closeBoard=document.getElementById('closeBoard')
@@ -13,7 +13,7 @@ const boardImage=document.getElementById('boardImage')
 const pinLayer=document.getElementById('pinLayer')
 const clearPins=document.getElementById('clearPins')
 
-/* NEW: drawing canvas + tools */
+
 let mode='pen'
 const drawCanvas=document.getElementById('drawCanvas')
 const dctx=drawCanvas.getContext('2d')
@@ -33,13 +33,13 @@ closeBoard.addEventListener('click',closeBoardFn)
 boardBackdrop.addEventListener('click',closeBoardFn)
 window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeBoardFn() })
 
-/* Helpers */
+
 const setActiveTool=b=>{
   ;[toolPins,toolPen,toolErase].forEach(x=>x.removeAttribute('data-active'))
   b.setAttribute('data-active','1')
 }
 const fitCanvas=()=>{
-  // Match canvas size to displayed image size
+
   drawCanvas.width=boardImage.clientWidth
   drawCanvas.height=boardImage.clientHeight
   drawCanvas.style.width=boardImage.clientWidth+'px'
@@ -54,21 +54,21 @@ const openBoard=src=>{
   boardModal.classList.add('show')
   pinLayer.innerHTML=''
   pinCount=0
-  // default to Pen
+
   mode='pen'
   setActiveTool(toolPen)
   drawCanvas.style.pointerEvents='auto'
   pinLayer.style.pointerEvents='none'
 }
 
-/* Tool switching */
+
 toolPins.onclick=()=>{mode='pins';setActiveTool(toolPins);drawCanvas.style.pointerEvents='none';pinLayer.style.pointerEvents='auto'}
 toolPen.onclick =()=>{mode='pen'; setActiveTool(toolPen); drawCanvas.style.pointerEvents='auto'; pinLayer.style.pointerEvents='none'}
 toolErase.onclick=()=>{mode='erase';setActiveTool(toolErase);drawCanvas.style.pointerEvents='auto';pinLayer.style.pointerEvents='none'}
 
 window.addEventListener('resize',()=>{ if(boardModal.classList.contains('show')) fitCanvas() })
 
-/* Drawing */
+
 let drawing=false
 let lastX=0,lastY=0
 const getLocal=evt=>{const r=drawCanvas.getBoundingClientRect();return {x:evt.clientX-r.left,y:evt.clientY-r.top}}
@@ -96,7 +96,7 @@ drawCanvas.addEventListener('pointerup',()=>drawing=false)
 drawCanvas.addEventListener('pointercancel',()=>drawing=false)
 clearDraw.onclick=()=>dctx.clearRect(0,0,drawCanvas.width,drawCanvas.height)
 
-/* Pins (only in Pins mode) */
+
 const localPos=(evt)=>{
   const rect=pinLayer.getBoundingClientRect()
   const x=(evt.clientX-rect.left)/rect.width
@@ -146,14 +146,14 @@ window.addEventListener('mousemove',e=>{
 window.addEventListener('mouseup',()=>{dragPin=null})
 clearPins.addEventListener('click',()=>{ if(confirm('Clear all pins?')){ pinLayer.innerHTML=''; pinCount=0 }})
 
-/* ---------- FEED & POSTS ---------- */
+
 const feed=document.getElementById('feed')
 
 let posts=[{
   id:crypto.randomUUID(),
   author:"Yashida Yagami",
   role:"Head of Design",
-  avatar:"https://images.unsplash.com/photo-1609344143650-30a2a1b2f3b0?q=80&w=256&auto=format&fit=crop",
+  avatar:"/Assets/Profile5.png",
   hero:"/Assets/Character2.png",
   title:"Feedback on Female Character Design – Need Input on Representation & Stereotypes",
   text:"Hi everyone, I’m working on a new female character for my game and would love your feedback. I want to know if this design contains any stereotypical traits, over-sexualization, or costume issues that might limit how inclusive and authentic she feels.",
@@ -165,7 +165,7 @@ let posts=[{
 
 const h=t=>{const d=document.createElement('div');d.innerHTML=t.trim();return d.firstChild}
 
-/* render adds a small 'Give Badge' button on each comment (except "You") */
+
 const renderPost=p=>h(`
   <article class="card" data-id="${p.id}">
     <div class="post-head">
@@ -210,7 +210,7 @@ const renderPost=p=>h(`
 const renderAll=()=>{feed.innerHTML='';posts.forEach(p=>feed.appendChild(renderPost(p)))}
 renderAll()
 
-/* Hook up Create Board + toggle reviews */
+
 feed.addEventListener('click',e=>{
   const card=e.target.closest('.card')
   if(!card) return
@@ -226,7 +226,7 @@ feed.addEventListener('click',e=>{
   }
 })
 
-/* Add comment */
+
 feed.addEventListener('submit',e=>{
   if(!e.target.classList.contains('comment-form')) return
   e.preventDefault()
@@ -240,7 +240,7 @@ feed.addEventListener('submit',e=>{
   renderAll()
 })
 
-/* ---------- BADGE SYSTEM (unchanged) ---------- */
+
 const BADGE_KEY='fv_badges_v1'
 const REVIEWERS_KEY='fv_reviewers_v1'
 const badgeCatalog={
@@ -292,7 +292,7 @@ const ensureReviewer=({name,avatar,role})=>{
   return r
 }
 
-/* Render leaderboard with 3 buttons only */
+
 const renderLeaderboard=()=>{
   reviewersList.innerHTML=''
   const sorted=[...reviewers].sort((a,b)=>{
@@ -319,7 +319,7 @@ reviewersList?.addEventListener('click', e => {
   if (!row) return;
   const id = row.dataset.reviewerId;
 
-  // Give badge modal
+
   if (e.target.matches('[data-action="open-badge"], .btn--give-badge')) {
     const r = findReviewerById(id);
     badgeModal.dataset.reviewerId = id;
@@ -329,18 +329,18 @@ reviewersList?.addEventListener('click', e => {
     openModal(badgeModal);
   }
 
-  // View badges modal
+
   else if (e.target.matches('[data-action="view-badges"], .btn--view-badges')) {
     showBadgeDetails(id);
   }
 
-  // Open reviewer profile
+
   else if (e.target.matches('[data-action="profile"], .btn--profile')) {
     window.location.href = `profile.html?id=${encodeURIComponent(id)}`;
   }
 })
 
-/* Give badge from a comment */
+
 feed.addEventListener('click',e=>{
   const btn=e.target.closest('.give-badge-comment')
   if(!btn) return
@@ -376,7 +376,7 @@ badgeForm.addEventListener('submit',e=>{
   closeModal(badgeModal)
 })
 
-/* Badge details modal */
+
 const showBadgeDetails=(reviewerId)=>{
   const r=findReviewerById(reviewerId)
   const catalogOrder=['insightful','inclusive','constructive','fast','mentor']
