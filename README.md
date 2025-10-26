@@ -1,9 +1,9 @@
-# 🎮 Leveling the Playing Field: Gender Stereotypes and Sexism in Video Games  
+# Fair  
 
 ## 👥 Team Name: *We Tried*  
 
 ### 📌 Project Title  
-**Leveling the Playing Field: Gender Stereotypes and Sexism in Video Games**
+**FAIRFRAME**
 
 ---
 
