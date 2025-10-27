@@ -1,4 +1,4 @@
-# 🏠 FairFrame – Wiki Home
+# 🏠 FairFrame – Home
 
 Welcome to the official **FairFrame Wiki**.  
 This wiki documents the complete design and development process for our DECO3500 project, including research, prototypes, user testing, and ethical considerations.
