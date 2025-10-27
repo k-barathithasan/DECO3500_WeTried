@@ -60,13 +60,16 @@ By fostering shared discussions, FairFrame provides developers with actionable i
 ## 📘 Project Documentation
 
 - [Design Process](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/Design-Process)  
-- [Ethical Considerations](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/Ethical-Considerations)  
+- [Ethical Considerations](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/Ethical-Consideration)  
 - [Stand-up Report](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/StandUp-Presentation-Document)  
 - [Promotional Material](https://github.com/k-barathithasan/DECO3500_WeTried/tree/main/Promotional%20Material%20and%20Posters)
 
 ---
 
 ## 🧩 Prototype Access
+
+### 🧪 Figma Prototype (Used in Testing)
+👉 [Figma Prototype](https://www.figma.com/proto/beGVBSs6sUDFboGAQc8yZy/Social-and-Mobile?page-id=188%3A179&node-id=188-186&viewport=693%2C250%2C0.37&t=5IkyyiC6o1aR8Y0o-8&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=188%3A186&hide-ui=1)
 
 ### 🔗 Links
 - [Prototype Folder](https://github.com/k-barathithasan/DECO3500_WeTried/tree/main/All%20Prototype)  
