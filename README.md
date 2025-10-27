@@ -86,16 +86,6 @@ By fostering shared discussions, FairFrame provides developers with actionable i
 
 ---
 
-## 👥 Team Members
-
-**WeTried Team:**  
-- Karthik Barathihasan  
-- John Jose  
-- Shakthi Kalyanaraman  
-- Sonali Salvi  
-- Sonu Manoj  
-
----
 
 ## 🤖 AI Acknowledgment
 
