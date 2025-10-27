@@ -210,7 +210,6 @@ const renderPost=p=>h(`
 const renderAll=()=>{feed.innerHTML='';posts.forEach(p=>feed.appendChild(renderPost(p)))}
 renderAll()
 
-/* ---------- New Post modal (fix) ---------- */
 const postModal       = document.getElementById('postModal');
 const postBackdrop    = document.getElementById('postBackdrop');
 const closePostModal  = document.getElementById('closePostModal');
@@ -220,17 +219,15 @@ const addPostBtn      = document.getElementById('addPost');
 const openPostModal = () => postModal?.classList.add('show');
 const closePost     = () => postModal?.classList.remove('show');
 
-// Open modal
+
 addPostBtn?.addEventListener('click', openPostModal);
 
-// Close modal (X / backdrop / Esc)
 postBackdrop?.addEventListener('click', closePost);
 closePostModal?.addEventListener('click', closePost);
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closePost();
 });
 
-// Create post
 postForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
 

@@ -1,4 +1,4 @@
-// Invite Drawer Controls
+
 const drawer = document.getElementById("inviteDrawer");
 const inviteBtn = document.getElementById("inviteBtn");
 const closeBtn = document.getElementById("inviteClose");
@@ -11,7 +11,7 @@ closeBtn.addEventListener("click", () => {
   drawer.classList.add("hidden");
 });
 
-// Featured Section
+
 const featuredData = [
   { img: "featured1.png", alt: "Featured 1" },
   { img: "featured2.png", alt: "Featured 2" },

@@ -271,9 +271,9 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   font-size:12px;
   line-height:1;
 }
-/* --- Top Reviewers: readable, flexible row layout --- */
+
 .reviewer-row{
-  display:flex !important;                 /* switch from grid → flex */
+  display:flex !important;                
   align-items:center;
   gap:12px;
   padding:10px 12px;
@@ -286,8 +286,8 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   display:flex;
   align-items:center;
   gap:10px;
-  min-width:220px;                         /* guarantees room for name */
-  flex:1 1 auto;                           /* meta grows */
+  min-width:220px;                        
+  flex:1 1 auto;                          
 }
 .reviewer-row img.avatar{
   width:36px;height:36px;border-radius:50%;object-fit:cover;display:block;
@@ -302,13 +302,13 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 
-/* Tallies stay compact and never push the name off */
+
 .reviewer-row .reviewer-sum{
   display:flex;gap:6px;flex:0 0 auto;margin-left:12px;
 }
 .badge-tally{min-width:24px;height:24px;padding:0 6px;font-size:12px;line-height:1}
 
-/* Actions pinned to the far right, no squish */
+
 .reviewer-row .row-actions{
   display:flex;gap:8px;flex:0 0 auto;margin-left:12px;
   min-width:max-content;
@@ -318,7 +318,7 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   padding:6px 10px;border-radius:10px;
 }
 .reviewer-row .row-actions .link-btn{padding:6px 10px;border-radius:10px}
-/* --- Final Top Reviewers layout with stacked buttons --- */
+
 .reviewer-row{
   display:flex;
   align-items:center;
@@ -382,7 +382,7 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   background:#fafafa;
 }
 
-/* stacked Give + View buttons */
+
 .reviewer-row .row-actions{
   display:flex;
   flex-direction:column;
@@ -419,17 +419,16 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   .reviewer-row .row-actions{flex-direction:row;width:100%;justify-content:space-between;}
 }
 
-/* Channels */
+
 .channels-container{
   background:#2f3136;
   padding:14px;
   border-radius:10px;
   color:#fff;
   font-family:Inter,sans-serif;
-  width:100%;           /* was 240px */
-  max-width:100%;
+  width:100%;           
   box-sizing:border-box;
-  overflow:hidden;      /* keep children inside */
+  overflow:hidden;      
 }
 
 .channels-container h3{
@@ -464,7 +463,7 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   border-radius:8px;
   transition:background .2s ease;
   width:100%;
-  min-width:0;          /* allow text to shrink */
+  min-width:0;          
   box-sizing:border-box;
 }
 
@@ -475,7 +474,7 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   height:28px;
   border-radius:50%;
   object-fit:cover;
-  flex:0 0 28px;        /* don’t grow */
+  flex:0 0 28px;        
 }
 
 .channel-name{
@@ -498,7 +497,7 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
   line-height:20px;
   text-align:center;
   padding:0 6px;
-  flex:0 0 auto;        /* don’t wrap */
+  flex:0 0 auto;        
 }
 
 
@@ -510,7 +509,7 @@ body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text
 }
 
 .brand-img {
-  width: 160px; /* adjust if needed */
+  width: 160px; 
   height: auto;
   display: block;
 }
