@@ -21,7 +21,7 @@ To run the prototype locally, follow these steps:
 ### 🧪 Figma Prototype (Used for User Testing)
 
 For early-stage usability and concept testing, you can access our interactive **Figma prototype** here:  
-👉 [FairFrame Figma Prototype](https://www.figma.com/proto/your-figma-link-here)
+👉 [FairFrame Figma Prototype](https://www.figma.com/proto/beGVBSs6sUDFboGAQc8yZy/Social-and-Mobile?page-id=188%3A179&node-id=188-186&viewport=693%2C250%2C0.37&t=5IkyyiC6o1aR8Y0o-8&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=188%3A186&hide-ui=1)
 
 > This version was used in user testing to evaluate layout, navigation flow, and collaboration features before the final coded prototype was developed.
 
