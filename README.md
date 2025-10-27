@@ -61,7 +61,7 @@ By fostering shared discussions, FairFrame provides developers with actionable i
 
 - [Design Process](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/Design-Process)  
 - [Ethical Considerations](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/Ethical-Considerations)  
-- [Stand-up 1 (Week 8)](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/Stand-up-1-(Week-8))  
+- [Stand-up Report](https://github.com/k-barathithasan/DECO3500_WeTried/wiki/StandUp-Presentation-Document)  
 - [Promotional Material](https://github.com/k-barathithasan/DECO3500_WeTried/tree/main/Promotional%20Material%20and%20Posters)
 
 ---
