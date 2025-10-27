@@ -1,7 +1,7 @@
 # 💻 FairFrame Prototype
 
 Welcome to the **FairFrame Interactive Prototype**, developed as part of the DECO3500 Design Prototype submission.  
-This prototype demonstrates the core workflow of the FairFrame platform — where designers and players collaborate to create more inclusive and representative game characters.
+This prototype demonstrates the core workflow of the FairFrame platform where designers and players collaborate to create more inclusive and representative game characters.
 
 ---
 
