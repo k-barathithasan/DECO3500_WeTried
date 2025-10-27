@@ -1,8 +1,7 @@
 # FairFrame_1
 
-![Platform Banner](images/banner.png)
 
-**Leveling the Playing Field** is a prototype platform designed to help game developers identify stereotypes early in the design process. Inspired by community-driven platforms like Discord and Reddit, it provides structured spaces where designers and reviewers collaborate to create inclusive, stereotype-free games.
+**FairFrame_1** is a prototype platform designed to help game developers identify stereotypes early in the design process. Inspired by community-driven platforms like Discord and Reddit, it provides structured spaces where designers and reviewers collaborate to create inclusive, stereotype-free games.
 
 ---
 
