@@ -72,6 +72,27 @@ By fostering shared discussions, FairFrame provides developers with actionable i
 - [Prototype Folder](https://github.com/k-barathithasan/DECO3500_WeTried/tree/main/All%20Prototype)  
 - [Poster & Promo Materials](https://github.com/k-barathithasan/DECO3500_WeTried/tree/main/Promotional%20Material%20and%20Posters)
 
+## ✅ Proof of Concept
+
+**FairFrame** is an interactive proof of concept that balances simulation and core functionality to demonstrate how collaborative feedback can improve inclusive character design in games.
+
+**What it shows**
+* Designers and players share character concepts and scripts for feedback.
+* Reviewers add comments on posts or open a drawing board to annotate designs and switch pen colours.
+* Reputation is demonstrated through giving badges and viewing badge history and reviewer profiles.
+* Discussion channels and community boards keep conversations organised and visible to the whole group.
+
+**How it reflects social computing**
+* Collaboration and awareness: shared boards, visible comments, and badges make contribution and activity easy to see.
+* Community norms: badges reward constructive behaviour and support fair participation.
+* Inclusivity focus: prompts and flows foreground respectful, diverse feedback.
+
+**Scope and limits of this build**
+* Login accepts any email format and a password with at least 6 characters.
+* Data is mocked in the front end and does not persist between sessions.
+* Features are implemented to illustrate flows and interactions rather than provide production systems.
+
+
 ### 💻 How to Run the Prototype
 
 1. **Open the project folder** in Visual Studio Code (VS Code).  
